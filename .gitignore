@@ -50,6 +50,5 @@ tools/
 scratch/
 pdf_debug.txt
 
-# Project Reports & PDF generation scripts (Keep local, do not push to git)
+# Project Report PDF (Keep local, do not push report PDF to git)
 *Report*.pdf
-generate_pdf_report.py
