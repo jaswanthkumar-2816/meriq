@@ -1,5 +1,7 @@
+import os
 import uvicorn
 from fastapi import FastAPI
+from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from config import settings
 from routers import skills, assessment, recommendations, analytics, resumes, screening
@@ -46,6 +48,19 @@ async def root():
         "resumes_dataset": "/api/resumes",
         "screening": "/api/screening/jobs"
     }
+
+@app.get("/api/report/download", tags=["Report"])
+@app.get("/report.pdf", tags=["Report"])
+async def download_report_pdf():
+    """Serve and download the official MERIQ Mini Project Report PDF."""
+    pdf_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "MERIQ_Mini_Project_Report.pdf")
+    if not os.path.exists(pdf_path):
+        pdf_path = os.path.join(os.path.dirname(__file__), "MERIQ_Mini_Project_Report.pdf")
+    return FileResponse(
+        path=pdf_path,
+        media_type="application/pdf",
+        filename="MERIQ_Mini_Project_Report.pdf"
+    )
 
 if __name__ == "__main__":
     uvicorn.run(
