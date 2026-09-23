@@ -29,7 +29,7 @@ export function getDownloadAllZipUrl() {
  * Uses multipart/form-data.
  */
 export async function screenResumes({ resumeFiles = [], jdText = '', jdFile = null, threshold = 70 }) {
-  const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+  const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8001';
   const formData = new FormData();
 
   // Append all resume files
@@ -47,7 +47,7 @@ export async function screenResumes({ resumeFiles = [], jdText = '', jdFile = nu
 
   formData.append('threshold', threshold);
 
-  const response = await fetch(`${API_BASE_URL}/api/resume/screen`, {
+  const response = await fetch(`${API_BASE_URL}/api/resumes/screen`, {
     method: 'POST',
     body: formData,
   });

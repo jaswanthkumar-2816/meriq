@@ -379,6 +379,28 @@ export default function ResumeScreening() {
                 <p className="text-xs sm:text-sm text-slate-500 dark:text-neutral-400 max-w-2xl leading-relaxed">
                   Upload multiple candidate resumes, provide target job requirements, and let MERIQ evaluate technical skill density, experience fit, project depth, and shortlist top candidates with full explanations.
                 </p>
+
+                {/* Sub-Navigation Switcher */}
+                <div className="flex flex-wrap items-center gap-2 pt-2">
+                  <Link
+                    to="/screening"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-[#141419] hover:bg-slate-200 dark:hover:bg-[#1e1e26] text-slate-700 dark:text-neutral-300 text-xs font-bold border border-slate-200 dark:border-[#22222a] transition-all"
+                  >
+                    <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                    <span>← Deep PDF Diagnostic & Upskilling</span>
+                  </Link>
+                  <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-amber-400 text-black text-xs font-extrabold shadow-sm">
+                    <Briefcase className="w-3.5 h-3.5 text-black" />
+                    <span>Batch ATS Screener & Leaderboard</span>
+                  </div>
+                  <Link
+                    to="/resumes"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 dark:bg-[#141419] hover:bg-slate-200 dark:hover:bg-[#1e1e26] text-slate-700 dark:text-neutral-300 text-xs font-bold border border-slate-200 dark:border-[#22222a] transition-all"
+                  >
+                    <FileText className="w-3.5 h-3.5 text-amber-500" />
+                    <span>1,000 Resumes Dataset →</span>
+                  </Link>
+                </div>
               </div>
 
               {/* Navigation Link to 1,000 Resumes Dataset */}

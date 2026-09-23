@@ -15,6 +15,7 @@ import Retest from './pages/Retest';
 import Progress from './pages/Progress';
 import Resumes from './pages/Resumes';
 import ResumeScreening from './pages/ResumeScreening';
+import Screening from './pages/Screening';
 
 // Global Notification Toast
 function NotificationToast() {
@@ -57,8 +58,9 @@ export default function App() {
             <Route path="/retest/:skillId" element={<Retest />} />
             <Route path="/progress" element={<Progress />} />
             <Route path="/resumes" element={<Resumes />} />
-            <Route path="/screening" element={<ResumeScreening />} />
+            <Route path="/screening" element={<Screening />} />
             <Route path="/resume-screening" element={<ResumeScreening />} />
+            <Route path="/batch-screening" element={<ResumeScreening />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
           <NotificationToast />
