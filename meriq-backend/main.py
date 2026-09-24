@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from config import settings
-from routers import skills, assessment, recommendations, analytics, resumes, screening
+from routers import skills, assessment, recommendations, analytics, resumes, screening, codelab, interview
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -28,6 +28,8 @@ app.include_router(recommendations.router, prefix=settings.API_V1_STR)
 app.include_router(analytics.router, prefix=settings.API_V1_STR)
 app.include_router(resumes.router, prefix=settings.API_V1_STR)
 app.include_router(screening.router, prefix=settings.API_V1_STR)
+app.include_router(codelab.router, prefix=settings.API_V1_STR)
+app.include_router(interview.router, prefix=settings.API_V1_STR)
 
 @app.get("/health", tags=["Health"])
 async def health_check():

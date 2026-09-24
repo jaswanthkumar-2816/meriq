@@ -16,6 +16,9 @@ import Progress from './pages/Progress';
 import Resumes from './pages/Resumes';
 import ResumeScreening from './pages/ResumeScreening';
 import Screening from './pages/Screening';
+import Compare from './pages/Compare';
+import CodeLab from './pages/CodeLab';
+import Interview from './pages/Interview';
 
 // Global Notification Toast
 function NotificationToast() {
@@ -61,6 +64,9 @@ export default function App() {
             <Route path="/screening" element={<Screening />} />
             <Route path="/resume-screening" element={<ResumeScreening />} />
             <Route path="/batch-screening" element={<ResumeScreening />} />
+            <Route path="/compare" element={<Compare />} />
+            <Route path="/codelab" element={<CodeLab />} />
+            <Route path="/interview" element={<Interview />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
           <NotificationToast />

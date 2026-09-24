@@ -9,6 +9,9 @@ import {
   TrendingUp, 
   FileText,
   UserCheck,
+  Users,
+  Code2,
+  Mic,
   Sparkles, 
   RotateCcw, 
   ChevronRight 
@@ -30,6 +33,9 @@ export default function Sidebar() {
     { name: 'Learning Plan', href: `/recommendations/${currentSkillId}`, icon: BookOpen },
     { name: 'Progress & Analytics', href: '/progress', icon: TrendingUp },
     { name: 'Resume Screening', href: '/screening', icon: UserCheck, badge: 'AI Match' },
+    { name: 'Candidate Compare', href: '/compare', icon: Users, badge: 'Duel' },
+    { name: 'CodeLab Sandbox', href: '/codelab', icon: Code2, badge: 'Live Code' },
+    { name: 'AI Interview Studio', href: '/interview', icon: Mic, badge: 'AI Viva' },
     { name: '1,000 Resumes Dataset', href: '/resumes', icon: FileText, badge: '1K PDFs' },
   ];
 
